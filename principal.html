@@ -89,20 +89,19 @@
       pointer-events:none;
     }
 
-    /* brilho no coração */
+    /* brilho + coração */
     .heart {
       position:absolute;
       width: 24px;
       height: 24px;
       opacity:0;
       transform: translateY(0) rotate(0deg);
-      filter: drop-shadow(0 0 8px rgba(255,107,154,0.9)); /* brilho */
       animation: brilhoPulse 1.8s infinite alternate ease-in-out;
     }
 
     @keyframes brilhoPulse {
-      0% { filter: drop-shadow(0 0 6px rgba(255,107,154,0.7)) brightness(1); }
-      100% { filter: drop-shadow(0 0 14px rgba(255,107,154,1)) brightness(1.3); }
+      0% { filter: drop-shadow(0 0 6px rgba(255,107,154,0.7)); }
+      100% { filter: drop-shadow(0 0 14px rgba(255,107,154,1)); }
     }
 
     @keyframes rise {
@@ -122,8 +121,8 @@
       animation-delay: .3s;
     }
 
-    /* BOTÃO CENTRALIZADO */
-    #continueBtn {
+    /* BOTÕES (TODOS VERMELHOS) */
+    .continueBtn {
       margin-top: 14px;
       padding: 14px 32px;
       font-size: 18px;
@@ -136,7 +135,7 @@
       transition: 0.3s;
     }
 
-    #continueBtn:hover {
+    .continueBtn:hover {
       transform: scale(1.07);
       background: #ff3b3b;
     }
@@ -149,24 +148,35 @@
 
     <div class="small-note">Para: Minha Princesa ❤️</div>
 
-    <!-- PRIMEIRO CONTEÚDO -->
-    <div id="firstContent" style="display:flex; flex-direction:column; align-items:center;">
+    <!-- TELA 1 -->
+    <div id="screen1" style="display:flex; flex-direction:column; align-items:center;">
       <div class="portrait">
         <img src="nós.png">
       </div>
 
       <div class="caption">Estava aqui pensando…</div>
 
-      <button id="continueBtn">Continuar ❤️</button>
+      <button class="continueBtn" id="btn1">Continuar ❤️</button>
     </div>
 
-    <!-- SEGUNDO CONTEÚDO (ESCONDIDO) -->
-    <div id="secondContent" style="display:none; flex-direction:column; align-items:center;">
+    <!-- TELA 2 -->
+    <div id="screen2" style="display:none; flex-direction:column; align-items:center;">
       <div class="portrait">
         <img src="calendario.png">
       </div>
 
       <div class="caption">Fazem 5 meses que…</div>
+
+      <button class="continueBtn" id="btn2">Continuar ❤️</button>
+    </div>
+
+    <!-- TELA 3 -->
+    <div id="screen3" style="display:none; flex-direction:column; align-items:center;">
+      <div class="portrait">
+        <img src="eueela.png">
+      </div>
+
+      <div class="caption">Eu fiz uma das melhores escolhas da minha vida ❤️</div>
     </div>
 
     <div class="hearts" id="heartsContainer"></div>
@@ -201,10 +211,15 @@
     for(let i=0;i<10;i++) setTimeout(createHeart, i*300);
     setInterval(createHeart, 600);
 
-    // botão troca conteúdo
-    document.getElementById("continueBtn").onclick = () => {
-      document.getElementById("firstContent").style.display = "none";
-      document.getElementById("secondContent").style.display = "flex";
+    // TROCAS DAS TELAS
+    document.getElementById("btn1").onclick = () => {
+      screen1.style.display = "none";
+      screen2.style.display = "flex";
+    };
+
+    document.getElementById("btn2").onclick = () => {
+      screen2.style.display = "none";
+      screen3.style.display = "flex";
     };
   </script>
 
