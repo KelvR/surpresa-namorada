@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surpresa</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* frase acima */
+    .top-text {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 0.4s;
+    }
+
+    /* botão vermelho */
+    button {
+      background: red;
+      color: white;
+      font-size: 30px;
+      padding: 20px 50px;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(255,0,0,0.7);
+      transform: scale(0.8);
+      opacity: 0;
+      animation: btnAnim 1.6s forwards;
+      animation-delay: 1s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      filter: brightness(1.15);
+    }
+
+    /* animações */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes btnAnim {
+      0% { opacity: 0; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-text">Tenho algo pra te mostrar… ❤️</div>
+
+  <button onclick="window.location.href='principal.html'">
+    Clique aqui
+  </button>
+
+</body>
+</html>
