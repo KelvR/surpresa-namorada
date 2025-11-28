@@ -1,74 +1,47 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Surpresa</title>
 
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    body{
+      margin:0;
+      height:100vh;
+      background:#0b0b12;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       font-family: Arial, sans-serif;
-      overflow: hidden;
+      color:white;
+      text-align:center;
     }
 
-    /* frase acima */
-    .top-text {
-      color: white;
-      font-size: 22px;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 0.4s;
+    a{
+      padding:18px 34px;
+      background:#d62828;
+      border-radius:12px;
+      font-size:22px;
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:.3s;
     }
 
-    /* botão vermelho */
-    button {
-      background: red;
-      color: white;
-      font-size: 30px;
-      padding: 20px 50px;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 0 20px rgba(255,0,0,0.7);
-      transform: scale(0.8);
-      opacity: 0;
-      animation: btnAnim 1.6s forwards;
-      animation-delay: 1s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      filter: brightness(1.15);
-    }
-
-    /* animações */
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    @keyframes btnAnim {
-      0% { opacity: 0; transform: scale(0.7); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+    a:hover{ background:#ff3b3b; transform:scale(1.06); }
   </style>
-</head>
 
+</head>
 <body>
 
-  <div class="top-text">Tenho algo pra te mostrar… ❤️</div>
+  <div>
+    <h2>Ei, tenho algo para te mostrar! ❤️</h2>
+    <a href="principal.html">Entrar</a>
+  </div>
 
-  <button onclick="window.location.href='principal.html'">
-    Clique aqui
-  </button>
+  <!-- Música global -->
+  <audio id="bgAudio" src="musica.mp3" autoplay loop></audio>
 
 </body>
 </html>
